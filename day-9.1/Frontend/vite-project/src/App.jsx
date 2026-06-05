@@ -11,7 +11,7 @@ function App() {
   console.log("hello integration");
 
   function fetchNotes(){
-     axios.get("http://localhost:3000/api/notes")
+     axios.get("/api/notes")
     .then(res => {
       setNotes(res.data.notes)
     })
@@ -29,7 +29,7 @@ function handleSubmit (e) {
   const {title , description} = e.target.elements
 
   console.log(title.value , description.value);
-  axios.post("http://localhost:3000/api/notes", {
+  axios.post("/api/notes", {
     title : title.value,
     description: description.value
 })
@@ -41,7 +41,7 @@ function handleSubmit (e) {
 
 function handleDeleteNote(noteID)
 {
-  axios.delete("http://localhost:3000/api/notes/"+noteID)
+  axios.delete("/api/notes/"+noteID)
   .then(res=> {
     console.log(res.data);
     fetchNotes()
@@ -54,7 +54,7 @@ function handleUpdateNote(noteID)
 {
   const newDescription = prompt("Enter new description:")
   if (newDescription) {
-    axios.patch("http://localhost:3000/api/notes/" + noteID, {
+    axios.patch("/api/notes/" + noteID, {
       description: newDescription
     })
     .then(res => {
