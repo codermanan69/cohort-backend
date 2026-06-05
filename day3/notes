@@ -1,7 +1,0 @@
-npx nodemon server.js
-
-GET is used to retrieve data from a server
-POST is used to send data to a server to create or update a resource.
-
-
-aaj ki class me hamne data retrive kiya backend me and phir uske baad woh data wapas se post api ke through bheja ussi client side par 
